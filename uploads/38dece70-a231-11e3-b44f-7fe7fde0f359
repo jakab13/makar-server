@@ -1,0 +1,86 @@
+
+int numTextures = 3;
+PImage textures[] = new PImage[numTextures];
+PImage img;
+int circleSize = 5;
+float[][] brightnessMatrix;
+int count;
+int[] pointArray;
+
+void setup() {
+  img = loadImage("street.jpg");
+  int width = int(img.width);
+  int height = int(img.height);
+  size(img.width, img.height);
+//  brightnessMatrix = new float[width][height];
+  background(255);
+  //  fill(0);
+  //  rect(0, 0, width, borderHeight);
+  imageMode(CENTER);
+  noStroke();
+  smooth();
+  
+  pointArray = new int[1];
+
+  img.loadPixels();
+
+  for (int i = 0; i < numTextures; i++) {
+    textures[i] = loadImage(i + 1 + ".png");
+  }
+  
+  for (int i = 0; i < img.width; i++) {
+    for (int j=0; j<img.height; j++) {
+      int loc = i+j*img.width;
+      float brightVal = brightness(img.pixels[loc]);
+        if (brightVal < 50) {
+          pointArray = expand(pointArray, (pointArray.length+1));
+          pointArray[pointArray.length-1] = loc;
+        }
+
+//      brightnessMatrix[i][j] = brightness(img.pixels[loc]);
+    }
+  }
+  
+}
+
+
+void draw() {
+  background(255);
+//  for (int i = 0; i < img.width; i++) {
+//    for (int j=0; j<img.height; j++) {
+//      float brightVal = brightnessMatrix[i][j];
+//
+//      if (brightVal < 100) {
+////        int textureSelector;
+////        int randomGen = int(random(50));
+////        if ( randomGen == 0) {
+////          textureSelector = 0;
+////        } 
+////        else {
+////          textureSelector = int(random(1, 3));
+////        }
+//        tint(0, brightVal);
+//        image(textures[1], i+random(-3,3), j+random(-3,3), circleSize, circleSize);
+////        fill(0);
+////        ellipse(i, j, circleSize, circleSize);
+//      }
+//    }
+//  }
+
+  for (int i = 0; i < pointArray.length; i++)  {
+    int loc = pointArray[i];
+    int x = loc%img.width ;
+    int y = (int)loc/img.width;
+    tint(0);
+    image(textures[1], x+random(-3,3), y+random(-3,3), circleSize, circleSize);
+//    fill(0);
+//    ellipse(x+random(-3,3), y+random(-3,3), circleSize, circleSize);
+  }
+  
+//  println(pointArray.length);
+
+  if (keyPressed) {
+//    save("test.png");
+  }
+}
+

@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div Welcome
+    h1= title
+    p Welcome to #{title}
+    form(action="/login", method="post")
+        div
+            label Email address:
+            input(type="email" name="email")
+        div
+            label Password:
+            input(type="password", name="password")
+        div
+            input(type="submit", value="Signup/Login")

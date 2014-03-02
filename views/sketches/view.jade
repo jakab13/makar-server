@@ -1,0 +1,12 @@
+extends ../layout
+
+block content
+    h2 Title
+    div #{sketch.title}
+    h2 Description
+    div #{sketch.description}
+    div Created at: #{sketch.createdAt}
+    a(href='/sketches/#{sketch._id}/download') Download Sketch: #{sketch.sketchName}
+    img(src='/QRCodes/#{sketch._id}.png')
+
+
