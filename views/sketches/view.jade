@@ -8,5 +8,15 @@ block content
     div Created at: #{sketch.createdAt}
     a(href='/sketches/#{sketch._id}/download') Download Sketch: #{sketch.sketchName}
     img(src='/QRCodes/#{sketch._id}.png')
-
-
+    a(href='/sketches/#{sketch._id}/edit') Edit This Sketch
+    div#contentWrap
+        div#chatWrap
+            div#chat
+                form#send-message
+                    input#message
+                    input(type="submit")
+                    input#room(type="hidden", value="#{sketch._id}")
+        div#users
+    script(src="https://code.jquery.com/jquery-1.10.2.min.js")
+    script(src="/socket.io/socket.io.js")
+    script(src="/javascripts/chat.js")

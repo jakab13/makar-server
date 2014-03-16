@@ -6,7 +6,8 @@ var SketchSchema = new mongoose.Schema({
     description: String,
     sketchName: String,
     sketchId: String,
-    createdAt: {type: Date, default: Date.now}
+    createdAt: {type: Date, default: Date.now},
+    shared: String
 });
 
 var Sketch = mongoose.model('Sketch', SketchSchema);

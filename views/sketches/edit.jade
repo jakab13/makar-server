@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+    form(action='/sketches/update', method='post', enctype='multipart/form-data')
+        input(type='text', name='title', value=#{sketch.title})
+        textarea(name='description', value=#{sketch.description})
+        input(type='file', name='sketch', value=#{sketch.sketchName})
+        input(type='submit', value='Save changes')

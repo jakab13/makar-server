@@ -8,12 +8,14 @@ var routes = require('./routes');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
-var io = require('socket.io');
 
 var app = express();
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
 
 // Models
 var User = require('./models/User');
+var Sketch = require('./models/Sketch');
 
 // Routes
 var user = require('./routes/user');
@@ -85,16 +87,50 @@ app.get('/users/:userId', user.view);
 
 app.get('/sketches/new', ensureAuthenticated, sketch.new);
 app.post('/sketches/submit', sketch.submit);
+app.post('/sketches/update', sketch.update);
 app.param('sketchId', sketch.load);
 app.get('/sketches/:sketchId', sketch.view);
 app.get('/sketches/:sketchId/info', sketch.info);
 app.get('/sketches/:sketchId/download', sketch.download);
+app.get('/sketches/:sketchId/edit', sketch.edit);
 
-http.createServer(app).listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+//http.createServer(app).listen(app.get('port'), function(){
+//  console.log('Express server listening on port ' + app.get('port'));
+//});
+
+server.listen(3000);
 
 function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     res.redirect('/');
 }
+
+io.sockets.on('connection', function (socket) {
+    socket.on('room', function(room){
+        socket.join(room);
+
+        socket.on('get inits', function(){
+            Sketch.find({
+                _id: room
+            }, function(err, docs){
+                var shared = docs[0].shared;
+                if (shared) {
+                    socket.emit('inits', shared);
+                }
+            });
+        });
+
+        socket.on('send message', function(data){
+            console.log(data);
+            var isPersistent = data.isPersistent;
+            var msg = data.msg;
+            socket.broadcast.to(room).emit('new message', msg);
+            if (isPersistent) {
+                Sketch.update({_id: room}, {shared: msg}, function(err){
+                    if (err) console.log(err);
+                });
+            }
+        });
+    });
+
+});
