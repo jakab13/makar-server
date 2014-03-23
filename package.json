@@ -1,5 +1,5 @@
 {
-  "name": "application-name",
+  "name": "Makar",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -16,5 +16,13 @@
     "canvas": "",
     "qrcode": "",
     "socket.io": ""
-  }
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "https://diffuseio@bitbucket.org/diffuseio/reactag-server.git"
+  },
+  "author": "Diffuse",
+  "license": "ISC"
 }

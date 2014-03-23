@@ -25,7 +25,7 @@ var sketch = require('./routes/sketch');
 var passport = require('passport');
 var auth = require('./routes/authentication/authentication.js');
 
-mongoose.connect("mongodb://localhost/reacTag");
+mongoose.connect("mongodb://localhost/makar");
 
 var db = mongoose.connection;
 
@@ -75,6 +75,7 @@ app.post('/login',
     }
 );
 
+
 app.get('/', routes.index);
 
 // Users
@@ -109,24 +110,27 @@ io.sockets.on('connection', function (socket) {
     socket.on('room', function(room){
         socket.join(room);
 
-        socket.on('get inits', function(){
+        socket.on('get state', function(){
             Sketch.find({
                 _id: room
             }, function(err, docs){
                 var shared = docs[0].shared;
                 if (shared) {
-                    socket.emit('inits', shared);
+                    socket.emit('get state', shared);
                 }
             });
         });
 
-        socket.on('send message', function(data){
+        socket.on('set variable', function(data){
             console.log(data);
+            var name = data.name;
             var isPersistent = data.isPersistent;
-            var msg = data.msg;
-            socket.broadcast.to(room).emit('new message', msg);
+            var value = data.value;
+            //socket.broadcast.to(room).emit('set variable', value);
+            io.sockets.in(room).emit('set variable', {name: name, value: value});
+
             if (isPersistent) {
-                Sketch.update({_id: room}, {shared: msg}, function(err){
+                Sketch.update({_id: room}, {shared: value}, function(err){
                     if (err) console.log(err);
                 });
             }
