@@ -2,14 +2,10 @@ extends ../layout
 
 block content
     h1= user.email
+    .sketchList Sketches
+        each sketch in sketches
+            .sketchItem
+                a(href='/sketches/#{sketch._id}') #{sketch.title}
+        //a(href='/users/#{user._id}')  #{user.name}
     a(href="/sketches/new")
         div Create new sketch
-
-//    each story in stories
-//        #intro-wrapper
-//            a(href='/stories/#{story._id}') #{story.title} by
-//            a(href='/users/#{user._id}')  #{user.name}
-//    div
-//        each friend in friends
-//            friend
-
