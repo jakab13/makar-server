@@ -1,8 +1,9 @@
 jQuery(function($){
     var socket = io.connect();
     var messageForm = $('#send-message');
-    var messageBox = $('#message');
-    var checkBox = $('#checkBox');
+    var nameBox = $('#name');
+    var valueBox = $('#value');
+//    var checkBox = $('#checkBox');
     var chat = $('#chat');
     var room = $('#room').val();
 
@@ -13,17 +14,18 @@ jQuery(function($){
 
     messageForm.submit(function(e){
         e.preventDefault();
-//        var isPersistent = checkBox.val();
-        var msg = messageBox.val();
-        var data = {isPersistent: true, msg: msg};
-        socket.emit('send message', data);
-        messageBox.val('');
+        var name = nameBox.val();
+        var value = valueBox.val();
+        var data = {isPersistent: true, name: name, value: value};
+        socket.emit('set variable', data);
+        nameBox.val('');
+        valueBox.val('');
     });
 
-    socket.on('new message', function(data){
-        chat.append(data + "<br/>");
+    socket.on('set variable', function(data){
+        chat.append(JSON.stringify(data) + "<br/>");
     });
-    socket.on('inits', function(data){
-        chat.append('Initialised data: ' + data + "<br/>");
+    socket.on('get inits', function(data){
+        chat.append('Initialised data: ' + JSON.stringify(data) + "<br/>");
     });
 });

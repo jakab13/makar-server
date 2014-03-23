@@ -8,14 +8,14 @@
     <file path="/authentication.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393524424937" ignored="false" />
     <file path="/User.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393525627280" ignored="false" />
     <file path="/index.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393769650281" ignored="false" />
-    <file path="/app.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395569039015" ignored="false" />
-    <file path="/user.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393525944639" ignored="false" />
+    <file path="/app.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395588031635" ignored="false" />
+    <file path="/user.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395571136531" ignored="false" />
     <file path="/layout.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393526733143" ignored="false" />
-    <file path="/view.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1394999012637" ignored="false" />
-    <file path="/Sketch.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1394979702859" ignored="false" />
+    <file path="/view.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395571625890" ignored="false" />
+    <file path="/Sketch.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395584372916" ignored="false" />
     <file path="/new.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1393783784230" ignored="false" />
     <file path="/sketch.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1394999164204" ignored="false" />
-    <file path="/chat.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1394991878703" ignored="false" />
+    <file path="/chat.js" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1395575304435" ignored="false" />
     <file path="/edit.jade" changelist="524e57e9-617d-4dfa-9b76-6553016490fe" time="1394998774110" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,7 +39,16 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="40" selection-start="724" selection-end="728" vertical-scroll-proportion="0.3300248">
+            <state line="128" column="31" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.36724564">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="chat.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/chat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="28" column="73" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -48,7 +57,16 @@
       <file leaf-file-name="Sketch.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/Sketch.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="18" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+            <state line="9" column="16" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sketch.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/routes/sketch.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="104" column="32" selection-start="3065" selection-end="3065" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -63,28 +81,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="edit.jade" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/sketches/edit.jade">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="40" selection-start="155" selection-end="155" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/User.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="16" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="view.jade" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/sketches/view.jade">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="40" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
+            <state line="19" column="23" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -101,27 +101,27 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/models/User.js" />
-        <option value="$PROJECT_DIR$/routes/user.js" />
         <option value="$PROJECT_DIR$/views/layout.jade" />
         <option value="$PROJECT_DIR$/views/login.jade" />
         <option value="$PROJECT_DIR$/views/index.jade" />
-        <option value="$PROJECT_DIR$/views/users/view.jade" />
         <option value="$PROJECT_DIR$/views/sketches/new.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
         <option value="$PROJECT_DIR$/views/sketches/new.jade" />
         <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/models/Sketch.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/chat.js" />
-        <option value="$PROJECT_DIR$/views/sketches/view.jade" />
         <option value="$PROJECT_DIR$/routes/sketch.js" />
         <option value="$PROJECT_DIR$/views/sketches/edit.jade" />
+        <option value="$PROJECT_DIR$/routes/user.js" />
+        <option value="$PROJECT_DIR$/views/users/view.jade" />
+        <option value="$PROJECT_DIR$/views/sketches/view.jade" />
+        <option value="$PROJECT_DIR$/models/Sketch.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/chat.js" />
         <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="127" />
-    <option name="y" value="131" />
+    <option name="x" value="12" />
+    <option name="y" value="22" />
     <option name="width" value="1260" />
     <option name="height" value="760" />
   </component>
@@ -155,17 +155,95 @@
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Makar Server" />
+              <option name="myItemId" value="reacTag" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Makar Server" />
+              <option name="myItemId" value="reacTag" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Makar Server" />
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sketches" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="routes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reacTag" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -175,10 +253,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -205,23 +287,6 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
-  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="sslv3">
-    <option name="USER" value="" />
-    <option name="PASSWORD" value="" />
-    <option name="mySSHConnectionTimeout" value="30000" />
-    <option name="mySSHReadTimeout" value="30000" />
-    <option name="LAST_MERGED_REVISION" />
-    <option name="MERGE_DRY_RUN" value="false" />
-    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
-    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
-    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
-    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
-    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
-    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <option name="FORCE_UPDATE" value="false" />
-    <option name="IGNORE_EXTERNALS" value="false" />
-    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="524e57e9-617d-4dfa-9b76-6553016490fe" name="Default" comment="" />
@@ -231,12 +296,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="127" y="131" width="1260" height="760" extended-state="0" />
+    <frame x="12" y="22" width="1260" height="760" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497979" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497979" sideWeight="0.6734375" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -328,13 +393,6 @@
         <state line="24" column="24" selection-start="626" selection-end="626" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/users/view.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="29" selection-start="109" selection-end="109" vertical-scroll-proportion="0.18610422">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/index.jade">
       <provider selected="true" editor-type-id="text-editor">
         <state line="5" column="36" selection-start="85" selection-end="85" vertical-scroll-proportion="0.18610422" />
@@ -352,28 +410,9 @@
         <state line="6" column="39" selection-start="102" selection-end="102" vertical-scroll-proportion="0.2238806" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="19" selection-start="408" selection-end="408" vertical-scroll-proportion="0.6311881" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/User.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="16" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/sketches/new.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="305" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/sketches/view.jade">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="40" selection-start="326" selection-end="326" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -385,30 +424,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/users/view.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="56" selection-start="309" selection-end="309" vertical-scroll-proportion="0.37220845">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sketches/view.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="23" selection-start="587" selection-end="587" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/sketches/new.jade">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="305" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/routes/sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="30" selection-start="1463" selection-end="1463" vertical-scroll-proportion="0.33498758">
+        <state line="104" column="32" selection-start="3065" selection-end="3065" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/user.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="27" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/models/Sketch.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="119" selection-end="119" vertical-scroll-proportion="0.0">
+        <state line="9" column="16" selection-start="255" selection-end="255" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/chat.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="10" selection-start="61" selection-end="61" vertical-scroll-proportion="0.074441686">
+        <state line="28" column="73" selection-start="897" selection-end="897" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="40" selection-start="724" selection-end="728" vertical-scroll-proportion="0.3300248">
+        <state line="128" column="31" selection-start="3523" selection-end="3523" vertical-scroll-proportion="0.36724564">
           <folding />
         </state>
       </provider>

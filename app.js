@@ -75,7 +75,6 @@ app.post('/login',
     }
 );
 
-
 app.get('/', routes.index);
 
 // Users
@@ -110,31 +109,36 @@ io.sockets.on('connection', function (socket) {
     socket.on('room', function(room){
         socket.join(room);
 
-        socket.on('get state', function(){
+        socket.on('get inits', function(){
             Sketch.find({
                 _id: room
             }, function(err, docs){
-                var shared = docs[0].shared;
-                if (shared) {
-                    socket.emit('get state', shared);
+                var variables = docs[0].variables;
+                if (variables) {
+                    socket.emit('get inits', variables);
                 }
             });
         });
 
         socket.on('set variable', function(data){
             console.log(data);
-            var name = data.name;
             var isPersistent = data.isPersistent;
+            var name = data.name;
             var value = data.value;
-            //socket.broadcast.to(room).emit('set variable', value);
-            io.sockets.in(room).emit('set variable', {name: name, value: value});
-
+            socket.broadcast.to(room).emit('set variable', name + value);
             if (isPersistent) {
-                Sketch.update({_id: room}, {shared: value}, function(err){
-                    if (err) console.log(err);
+                Sketch.findOne({
+                   _id: room
+                }, 'variables', function(err, sketch){
+                    var variables = sketch.variables;
+                    variables[name] = value;
+                    Sketch.update({
+                        _id: room
+                    }, {$set: {variables: variables}}, {upsert: true}, function(err){
+                        if (err) console.log(err);
+                    });
                 });
             }
         });
     });
-
 });
