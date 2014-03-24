@@ -25,3 +25,10 @@ exports.view = function(req, res) {
         user : user
     });
 };
+
+exports.viewapp = function(req, res) {
+    res.json({
+        sketches: sketches,
+        user : user
+    });
+};
