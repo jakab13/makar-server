@@ -1,20 +1,22 @@
 {
-  "name": "application-name",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node app.js"
-  },
-  "dependencies": {
-    "express": "3.4.7",
-    "jade": "*",
-    "less-middleware": "*",
-    "mongoose": "",
-    "passport": "",
-    "passport-local": "",
-    "node-uuid": "",
-    "canvas": "",
-    "qrcode": "",
-    "socket.io": ""
-  }
+    "name": "application-name",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node app.js"
+    },
+    "dependencies": {
+        "express": "3.4.7",
+        "jade": "*",
+        "less-middleware": "*",
+        "mongoose": "",
+        "passport": "",
+        "passport-local": "",
+        "node-uuid": "",
+        "canvas": "",
+        "qrcode": "",
+        "socket.io": "",
+        "passport-http-bearer": "",
+        "crypto": ""
+    }
 }

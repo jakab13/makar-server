@@ -7,6 +7,7 @@ var express = require('express');
 var routes = require('./routes');
 var http = require('http');
 var path = require('path');
+var util = require('util');
 var mongoose = require('mongoose');
 
 var app = express();
@@ -68,12 +69,28 @@ if ('development' == app.get('env')) {
 app.post('/login',
     passport.authenticate('local', {
 //        successRedirect: '/',
-        failureRedirect: '/login',
+        failureRedirect: '/',
         failureFlash: true }),
     function(req, res) {
         res.redirect('/users/' + req.user._id);
     }
 );
+
+app.post('/loginapp',
+    passport.authenticate('local', {
+//        successRedirect: '/',
+        failureRedirect: '/',
+        failureFlash: true }),
+    function(req, res) {
+        res.redirect('/users/' + req.user._id);
+    }
+);
+
+//app.get('/tokens',
+//    passport.authenticate('bearer', { session: false }),
+//    function(req, res){
+//        res.json(req.user);
+//    });
 
 app.get('/', routes.index);
 
