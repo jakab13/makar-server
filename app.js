@@ -68,10 +68,20 @@ if ('development' == app.get('env')) {
 app.post('/login',
     passport.authenticate('local', {
 //        successRedirect: '/',
-        failureRedirect: '/login',
+        failureRedirect: '/',
         failureFlash: true }),
     function(req, res) {
         res.redirect('/users/' + req.user._id);
+    }
+);
+
+app.post('/loginapp',
+    passport.authenticate('local', {
+//        successRedirect: '/',
+        failureRedirect: '/',
+        failureFlash: true }),
+    function(req, res) {
+        res.redirect('/users/' + req.user._id + '/app');
     }
 );
 
@@ -82,6 +92,7 @@ app.get('/', routes.index);
 app.get('/users', user.list);
 app.param('userId', user.load);
 app.get('/users/:userId', user.view);
+app.get('/users/:userId/app', user.viewapp);
 
 // Sketches
 
@@ -131,6 +142,7 @@ io.sockets.on('connection', function (socket) {
                    _id: room
                 }, 'variables', function(err, sketch){
                     var variables = sketch.variables;
+                    if(variables === undefined) variables = {};
                     variables[name] = value;
                     Sketch.update({
                         _id: room
