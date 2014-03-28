@@ -1,11 +1,15 @@
 extends ../layout
 
+block headerContent
+
 block content
     h1= user.email
-    .sketchList Sketches
-        each sketch in sketches
-            .sketchItem
-                a(href='/sketches/#{sketch._id}') #{sketch.title}
+    .col-lg-4.col-md-4
+        .list-group
+            each sketch in sketches
+                a.list-group-item(href='/sketches/#{sketch._id}')
+                    h4.list-group-item-heading #{sketch.title}
+                    p.list-group-item-text #{sketch.description}
         //a(href='/users/#{user._id}')  #{user.name}
     a(href="/sketches/new")
-        div Create new sketch
+        button.btn.btn-warning Create new sketch

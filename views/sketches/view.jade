@@ -1,15 +1,32 @@
 extends ../layout
 
 block content
-    h2 Title
-    div #{sketch.title}
-    h2 Description
-    div #{sketch.description}
-    div Created at: #{sketch.createdAt}
-    a(href='/sketches/#{sketch._id}/download') Download Sketch: #{sketch.sketchName}
-    img(src='/QRCodes/#{sketch._id}.png')
-    a(href='/sketches/#{sketch._id}/edit') Edit This Sketch
-    div#contentWrap
+    .navbar.navbar-inverse
+        .container
+            .navbar-collapse.collapse
+                ul.navbar-nav.nav
+                    li
+                        a(href="/users/#{user._id}") My profile
+    .container
+        .col-lg-4
+            .panel.panel-default
+                .panel-heading
+                    h1.panel-title #{sketch.title}
+                p.panel-body #{sketch.description}
+                h6.panel-footer Created at: #{sketch.createdAt}
+            .col-lg-12
+                a(href='/sketches/#{sketch._id}/download')
+                    button.btn.btn-primary Download #{sketch.sketchName}
+            .col-lg-12
+                a(href='/sketches/#{sketch._id}/edit')
+                    button.btn.btn-warning Edit This Sketch
+        .col-lg-4
+            .col-lg-12
+                img.img-thumbnail(src='/QRCodes/#{sketch._id}.png')
+            .col-lg-6
+                a(href='/QRCodes/#{sketch._id}/download')
+                    button.btn.btn-primary Download QRCode
+//    div#contentWrap
         div#chatWrap
             div#chat
                 form#send-message
@@ -24,3 +41,5 @@ block content
     script(src="https://code.jquery.com/jquery-1.10.2.min.js")
     script(src="/socket.io/socket.io.js")
     script(src="/javascripts/chat.js")
+    script(src="/javascripts/jquery.printElement.min.js")
+    script(src="/javascripts/printElement.js")

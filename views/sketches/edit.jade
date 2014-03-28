@@ -1,8 +1,24 @@
 extends ../layout
 
+block headerContent
+    link(rel='stylesheet', href='/stylesheets/sketch/new.css')
+
 block content
-    form(action='/sketches/update', method='post', enctype='multipart/form-data')
-        input(type='text', name='title', value=#{sketch.title})
-        textarea(name='description', value=#{sketch.description})
-        input(type='file', name='sketch', value=#{sketch.sketchName})
-        input(type='submit', value='Save changes')
+    .container.col-lg-6#new-form
+        form.form-horizontal(action='/sketches/update', method='post', enctype='multipart/form-data', role="form")
+            input(type='hidden', name='sketchId', value='#{sketch._id}')
+            .form-group
+                label.control-label.col-sm-4 Title
+                .col-sm-8
+                    input.form-control(type='text', name='title', placeholder='', focus="", value='#{sketch.title}')
+            .form-group
+                label.control-label.col-sm-4 Description
+                .col-sm-8
+                    textarea.form-control(name='description', rows="10") #{sketch.description}
+            .form-group
+                label.control-label.col-sm-4 Current file #{sketch.sketchName}
+                .col-sm-8
+                    input(type='file', name='sketch')
+            .form-group
+                .col-sm-offset-4.col-sm-8
+                    input.btn.btn-primary.btn-block(type='submit', value='Save changes')

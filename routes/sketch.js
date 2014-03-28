@@ -75,31 +75,42 @@ exports.info = function(req, res)   {
 
 exports.download = function(req, res)   {
     var file = './uploads/' + sketch.sketchId;
-    var fileName = sketch.sketchName
+    var fileName = sketch.sketchName;
     res.download(file, fileName);
 };
 
 exports.update = function(req, res)    {
     var b = req.body;
-    var sketchName = req.files.sketch.name;
-    var sketchId = uuid.v1();
-    var tempPath = req.files.sketch.path;
-    var targetPath = path.resolve('./uploads/' + sketchId);
-    fs.rename(tempPath, targetPath, function(err){
-        if (err) console.log(err);
-        Sketch.find({
-            _id: sketch._id
+    if (req.files.sketch.name) {
+        var sketchName = req.files.sketch.name;
+        var sketchId = uuid.v1();
+        var tempPath = req.files.sketch.path;
+        var targetPath = path.resolve('./uploads/' + sketchId);
+        fs.rename(tempPath, targetPath, function(err){
+            if (err) console.log(err);
+            Sketch.update({
+                _id: b.sketchId
+            }, {
+                title : b.title,
+                description: b.description,
+                sketchName: sketchName,
+                sketchId: sketchId
+            }, function(err){
+                    res.json(err);
+                    res.redirect('/sketches/' + sketch._id);
+            });
+        })
+    } else {
+        Sketch.update({
+            _id: b.sketchId
         }, {
             title : b.title,
-            description: b.description,
-            createdAt: Date.now(),
-            sketchName: sketchName,
-            sketchId: sketchId
+            description: b.description
         }, function(err){
             res.json(err);
             res.redirect('/sketches/' + sketch._id);
         });
-    });
+    }
 };
 
 exports.edit = function(req, res) {
@@ -107,5 +118,11 @@ exports.edit = function(req, res) {
         sketch : sketch,
         user: req.user
     });
+};
+
+exports.downloadQR = function(req, res) {
+    var file = path.resolve('./public/QRCodes/' + sketch._id + '.png');
+    var fileName = 'Makar_QR_' + sketch.title;
+    res.download(file, fileName);
 };
 

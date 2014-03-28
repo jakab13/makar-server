@@ -1,0 +1,21 @@
+body {
+  background-color: #f3f3ed;
+}
+.container {
+  height: 500px;
+  background: url("../images/makar-main.jpg") no-repeat center;
+  background-size: 100%;
+  -webkit-border-radius: 5px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 5px;
+  -moz-background-clip: padding;
+  border-radius: 5px;
+  background-clip: padding-box;
+  -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+.form-wrapper {
+  float: right;
+  margin-top: 50px;
+}

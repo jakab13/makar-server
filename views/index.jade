@@ -1,15 +1,12 @@
 extends layout
 
+block headerContent
+    link(rel='stylesheet', href='/stylesheets/login.css')
+
 block content
-    div Welcome
-    h1= title
-    p Welcome to #{title}
-    form(action="/login", method="post")
-        div
-            label Email address:
-            input(type="email" name="email")
-        div
-            label Password:
-            input(type="password", name="password")
-        div
-            input(type="submit", value="Signup/Login")
+    div.container
+        div.form-wrapper.col-lg-5.col-md-5.col-sm-5
+            form.form-signin(role="form",action="/login", method="post")
+                input(type="email", class="form-control", placeholder="Email address", required="" autofocus="", name="email")
+                input(type="password", class="form-control", placeholder="Password", required="", name="password")
+                button.btn.btn-lg.btn-primary.btn-block(type="submit") Sign in
